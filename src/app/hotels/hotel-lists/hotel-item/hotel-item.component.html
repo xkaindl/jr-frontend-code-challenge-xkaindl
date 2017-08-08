@@ -1,0 +1,37 @@
+<a
+  style="cursor: pointer"
+  [routerLink]="['../' + 'details/' + index]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4>{{ hotel.name }}</h4>
+    <p class="list-group-item-text">Country: {{ hotel.country }}</p>
+    <p class="list-group-item-text">City: {{ hotel.city }}</p>
+    <p class="list-group-item-text">Free rooms: {{ hotel.rooms }}</p>
+    <p class="list-group-item-text">Facilities: {{ hotel.facilities }}, </p>
+  </div>
+  <div
+    class="pull-right"
+    *ngIf="listMode && authorized">
+    <button (click)="onDeleteItem(); $event.stopPropagation(); false" class="btn btn-danger"><span
+      class="glyphicon glyphicon-trash"></span></button>
+    <button (click)="onEditItem(); $event.stopPropagation(); false" class="btn btn-info"><span
+      class="glyphicon glyphicon-pencil"></span></button>
+  </div>
+</a>
+<div
+  *ngIf="showAlert"
+  class="alert">
+  <p style="margin-bottom: 0.2em">Do you really want to delete this Hotel</p>
+  <br>
+  <button
+    class="btn btn-success"
+    (click)="onDelete()"
+  >Yes
+  </button>
+  <button
+    class="btn btn-danger"
+    (click)="onCancelDel()"
+  >No
+  </button>
+</div>

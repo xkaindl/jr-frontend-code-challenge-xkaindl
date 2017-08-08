@@ -1,0 +1,35 @@
+<div
+  style="cursor: default"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-g">{{ hotel.name }}</h4>
+    <p class="list-group-item-text">Country: {{ hotel.country }}</p>
+    <p class="list-group-item-text">City: {{ hotel.city }}</p>
+    <p class="list-group-item-text">Free rooms: {{ hotel.rooms }}</p>
+    <p class="list-group-item-text">Facilities: {{ hotel.facilities }}, </p>
+  </div>
+  <div *ngIf="reservationMode">
+    <button
+      style="margin-left: 0.25em"
+      class="btn btn-danger pull-right"
+      (click)="onCancelReservation(); $event.stopPropagation(); false">
+      X
+    </button>
+  </div>
+</div>
+<div
+  *ngIf="showAlert"
+  class="alert">
+  <p style="margin-bottom: 0.2em">Do you really want to cancel this reservation</p>
+  <br>
+  <button
+    class="btn btn-success"
+    (click)="onDelete()"
+  >Yes
+  </button>
+  <button
+    class="btn btn-danger"
+    (click)="onCancelDel()"
+  >No
+  </button>
+</div>

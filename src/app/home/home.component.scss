@@ -1,0 +1,21 @@
+input.ng-invalid.ng-touched {
+  border:1px solid red;
+  background-color: rgba(225, 115, 103, 0.1);
+}
+input, label, button, .list {
+  width: 90%;
+  margin-left: 5.5% ;
+}
+a {
+  font-size: 2em;
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(0, 160, 255, 0.6);
+}
+a:hover {
+  background-color: rgba(0, 160, 255, 0.5);
+}
+h1, h2 {
+  font-weight: bold;
+  text-align: center;
+}

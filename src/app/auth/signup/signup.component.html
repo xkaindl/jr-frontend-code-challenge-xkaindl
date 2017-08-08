@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSignup(f)" #f="ngForm">
+  <div class="form-group">
+    <label for="email">Mail</label>
+    <input type="text" id="email" name="email" ngModel class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" ngModel class="form-control">
+    <i style="color: darkgrey">Needs to be longer than 6 characters</i>
+    <div
+      *ngIf="error"
+      class="alert">
+      <p style="margin-bottom: 0.2em">{{authService.error}}</p>
+    </div>
+  </div>
+  <button class="btn btn-success" type="submit">Register</button>
+</form>

@@ -1,0 +1,11 @@
+<div
+  *ngIf="hotels && hotels.length > 0"
+  style="margin-top: 0.5em">
+
+  <app-hotel-detailed-item
+    *ngFor="let hotelEl of hotels; let i = index"
+    style="cursor: default"
+    [hotel]="hotelEl"
+    [index]="i"></app-hotel-detailed-item>
+</div>
+

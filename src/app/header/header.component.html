@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/" class="navbar-brand"><img
+        src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="Logo"></a>
+    </div>
+    <div class="navbar-default">
+      <ul class="nav navbar-nav">
+        <li><a routerLinkActive="active" routerLink="/hotels">Hotels</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a routerLinkActive="active" routerLink="/reservations">Reservations <span
+          class="badge">{{reservedHotels}}</span></a></li>
+      </ul>
+    </div>
+    <div
+      *ngIf="authService.isAuthenticated(); else login"
+      class="pull-right"
+      style="margin-top: 0.4em"
+      (click)="onLogout()">
+      <button class="btn btn-info">Logout</button>
+    </div>
+    <ng-template #login>
+      <div
+        class="pull-right"
+        style="margin-top: 0.4em"
+        (click)="onLogin()">
+        <button class="btn btn-info">Login</button>
+      </div>
+    </ng-template>
+  </div>
+</nav>

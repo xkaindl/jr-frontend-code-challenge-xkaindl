@@ -1,0 +1,64 @@
+<h1>Welcome to Super Hotels</h1>
+<a
+  style="cursor: pointer"
+  [routerLink]="['hotels']"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  Hotels
+</a>
+<br>
+<a
+  style="cursor: pointer"
+  [routerLink]="['reservations']"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  Reservations
+</a>
+<hr>
+<h2 style="text-align: center">Search a Hotel</h2>
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="city">City</label>
+      <input
+        type="text"
+        id="city"
+        formControlName="city"
+        class="form-control"
+        [(ngModel)]="hotelList.city">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="country">Country</label>
+      <input
+        type="text"
+        id="country"
+        formControlName="country"
+        class="form-control"
+        [(ngModel)]="hotelList.country">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="rooms">rooms</label>
+      <input
+        type="number"
+        id="rooms"
+        formControlName="rooms"
+        class="form-control"
+        [(ngModel)]="hotelList.rooms">
+    </div>
+  </div>
+  <button
+    style="margin-top: 0.25em"
+    class="btn btn-success"
+    type="button"
+    (click)="hotelList.search()"
+    [disabled]="!searchForm.valid">Search</button>
+  <div class="list">
+    <app-filtered-hotel-list #hotelList></app-filtered-hotel-list>
+  </div>
+</form>
+
+

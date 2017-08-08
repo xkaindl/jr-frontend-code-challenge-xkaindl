@@ -1,0 +1,50 @@
+<!--<div class="container" *ngIf="hotel">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-md-8">-->
+      <!--<h1>{{hotel.name}}</h1>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<hr>-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-md-8">-->
+      <!--<h3>{{hotel.country}} - {{hotel.city}}</h3>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row text-muted">-->
+    <!--<div class="col-xs-12 col-md-8">-->
+      <!--Free rooms: {{hotel.rooms}}-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-md-8">-->
+      <!--<h3>Facilities:</h3>-->
+      <!--<span class="text-muted" *ngFor="let facility of hotel.facilities">-->
+<!--{{facility}},-->
+<!--</span>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12">-->
+
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<h1>Details of {{hotel.name}}</h1>
+<app-hotel-detailed-item
+  [hotel]="hotel"
+  [index]="idx"></app-hotel-detailed-item>
+<div style="margin-top: 0.25em">
+  <button
+    (click)="onGoBack()"
+    class="btn btn-info">
+    <span class="glyphicon glyphicon-arrow-left"></span> Go back to list
+  </button>
+  <button
+    *ngIf="authService.isAuthenticated()"
+    (click)="onReserveItem()"
+    class="btn btn-success">
+    <span class="glyphicon glyphicon-pushpin"></span> Reserve
+  </button>
+</div>
+
