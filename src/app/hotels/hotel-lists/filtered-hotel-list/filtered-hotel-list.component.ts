@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-filtered-hotel-list',
   templateUrl: './filtered-hotel-list.component.html',
-  styleUrls: ['./filtered-hotel-list.component.css']
+  styleUrls: ['./filtered-hotel-list.component.scss']
 })
 export class FilteredHotelListComponent implements OnInit {
   city: string;
@@ -36,6 +36,7 @@ export class FilteredHotelListComponent implements OnInit {
       (hotels: Hotel[]) => {
         for (const hotel of hotels) {
           if (hotel.city === this.city && hotel.country === this.country && hotel.rooms > this.rooms) {
+            this.hotels = [];
             this.hotels.push(hotel);
           }
         }
@@ -43,6 +44,7 @@ export class FilteredHotelListComponent implements OnInit {
     );
     for (const hotel of this.hotelService.getHotels()) {
       if (hotel.city === this.city && hotel.country === this.country && hotel.rooms > this.rooms) {
+        this.hotels = [];
         this.hotels.push(hotel);
       }
     }

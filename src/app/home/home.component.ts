@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FilterService} from '../shared/filter.service';
+import {AuthService} from "../auth/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router,
               private route: ActivatedRoute,
+              protected authService: AuthService,
               private filterService: FilterService) {}
 
   ngOnInit() {

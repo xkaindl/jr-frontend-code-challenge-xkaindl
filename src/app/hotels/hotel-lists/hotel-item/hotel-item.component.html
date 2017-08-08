@@ -7,8 +7,6 @@
     <h4>{{ hotel.name }}</h4>
     <p class="list-group-item-text">Country: {{ hotel.country }}</p>
     <p class="list-group-item-text">City: {{ hotel.city }}</p>
-    <p class="list-group-item-text">Free rooms: {{ hotel.rooms }}</p>
-    <p class="list-group-item-text">Facilities: {{ hotel.facilities }}, </p>
   </div>
   <div
     class="pull-right"
@@ -19,6 +17,7 @@
       class="glyphicon glyphicon-pencil"></span></button>
   </div>
 </a>
+<hr>
 <div
   *ngIf="showAlert"
   class="alert">

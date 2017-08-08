@@ -11,7 +11,8 @@
   style="cursor: pointer"
   [routerLink]="['reservations']"
   routerLinkActive="active"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  *ngIf="authService.isAuthenticated()">
   Reservations
 </a>
 <hr>
